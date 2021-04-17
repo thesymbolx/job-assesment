@@ -3,11 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/homeFragment">
-
+    app:startDestination="@id/roomListFragment">
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="evans.dale.job_assessment.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/roomListFragment"
+        android:name="evans.dale.job_assessment.room.RoomListFragment"
+        android:label="RoomListFragment" />
 </navigation>
