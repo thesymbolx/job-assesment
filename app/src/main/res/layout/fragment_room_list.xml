@@ -12,7 +12,8 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".room.RoomListFragment">
+        tools:context=".room.RoomListFragment"
+        android:background="@drawable/red_pink_graident">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/room_list_recycler"

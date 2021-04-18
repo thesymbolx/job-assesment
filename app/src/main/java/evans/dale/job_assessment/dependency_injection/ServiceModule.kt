@@ -24,8 +24,8 @@ class ServiceModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-    @ViewModelScoped
     @Provides
+    @ViewModelScoped
     fun getRoomService(client: Retrofit): RoomRepo =
         client.create(RoomRepo::class.java)
 

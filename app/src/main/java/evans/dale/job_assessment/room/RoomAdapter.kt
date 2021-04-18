@@ -17,7 +17,14 @@ class RoomAdapter(var items: List<Room> = emptyList()) : RecyclerView.Adapter<Ro
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binding.test.text = items[position].name
+        holder.binding.apply {
+            val room = items[position]
+
+            title.text = room.name
+            url = room.thumbnailUrl
+            capacity.text = "${room.capacity}"
+        }
+
     }
 
     override fun getItemCount() = items.size
