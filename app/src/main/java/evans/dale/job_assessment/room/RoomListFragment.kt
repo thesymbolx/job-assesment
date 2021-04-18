@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import evans.dale.job_assessment.databinding.FragmentRoomListBinding
@@ -29,7 +30,11 @@ class RoomListFragment : Fragment() {
         return FragmentRoomListBinding.inflate(layoutInflater).apply {
             viewModel = this@RoomListFragment.viewModel
 
-            adapter = RoomAdapter()
+            adapter = RoomAdapter {
+                findNavController().navigate(
+                    RoomListFragmentDirections.actionRoomListFragmentToRoomDetailsFragment(it)
+                )
+            }
             roomListRecycler.layoutManager = LinearLayoutManager(requireContext())
             roomListRecycler.adapter = adapter
         }.root

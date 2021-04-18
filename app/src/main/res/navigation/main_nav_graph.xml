@@ -7,5 +7,17 @@
     <fragment
         android:id="@+id/roomListFragment"
         android:name="evans.dale.job_assessment.room.RoomListFragment"
-        android:label="RoomListFragment" />
+        android:label="RoomListFragment" >
+        <action
+            android:id="@+id/action_roomListFragment_to_roomDetailsFragment"
+            app:destination="@id/roomDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomDetailsFragment"
+        android:name="evans.dale.job_assessment.room_details.RoomDetailsFragment"
+        android:label="RoomDetailsFragment" >
+        <argument
+            android:name="roomKey"
+            app:argType="string" />
+    </fragment>
 </navigation>

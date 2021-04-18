@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import evans.dale.job_assessment.databinding.RoomItemBinding
 import evans.dale.job_assessment.service.Room
 
-class RoomAdapter(var items: List<Room> = emptyList()) : RecyclerView.Adapter<RoomAdapter.ViewHolder>() {
+class RoomAdapter (
+        var items: List<RoomItemVM> = emptyList(),
+        val roomClick: (key: String) -> Unit) : RecyclerView.Adapter<RoomAdapter.ViewHolder>() {
 
     class ViewHolder(val binding: RoomItemBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -18,13 +20,12 @@ class RoomAdapter(var items: List<Room> = emptyList()) : RecyclerView.Adapter<Ro
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.apply {
-            val room = items[position]
-
-            title.text = room.name
-            url = room.thumbnailUrl
-            capacity.text = "${room.capacity}"
+            viewModel = items[position]
         }
 
+        holder.binding.root.setOnClickListener {
+            roomClick(items[position].key)
+        }
     }
 
     override fun getItemCount() = items.size

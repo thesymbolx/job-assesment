@@ -1,7 +1,7 @@
 package evans.dale.job_assessment.service
 
 data class Room (
-    val key: Int,
+    val key: String,
     val name: String,
     val thumbnailUrl: String,
     val capacity: Int)

@@ -7,14 +7,14 @@ import evans.dale.job_assessment.service.RoomRepo
 import javax.inject.Inject
 
 
-interface RoomModel {
+interface RoomRepository {
     suspend fun getRoomList() : List<Room>
     suspend fun getRoomDetails(key: String) : RoomDetail
 }
 
-class RoomModelImpl @Inject constructor(
+class RoomRepositoryImpl @Inject constructor(
     private val roomService: RoomRepo
-) : RoomModel {
+) : RoomRepository {
     override suspend fun getRoomList(): List<Room> =
         roomService.getRooms()
 

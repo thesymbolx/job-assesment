@@ -6,5 +6,19 @@ import javax.inject.Inject
 
 @HiltViewModel
 class RoomListVM @Inject constructor(
-    private val roomModel: RoomModel
-) : ViewModel(), RoomModel by roomModel
+    private val roomRepository: RoomRepository,
+) : ViewModel() {
+
+   suspend fun getRoomList(): List<RoomItemVM> {
+        val rooms = roomRepository.getRoomList()
+
+        return rooms.map {
+            RoomItemVM(
+                    it.thumbnailUrl,
+                    it.name,
+                    it.capacity,
+                    it.key
+            )
+        }
+    }
+}

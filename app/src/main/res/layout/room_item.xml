@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="url"
-            type="String" />
+            name="viewModel"
+            type="evans.dale.job_assessment.room.RoomItemVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -42,11 +42,12 @@
                     style="@style/TitleText"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="70dp"
+                    android:layout_marginStart="78dp"
                     android:layout_marginTop="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/end_thumbnail"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@{viewModel.title}"/>
 
                 <TextView
                     android:id="@+id/capacity"
@@ -55,7 +56,8 @@
                     app:layout_constraintStart_toStartOf="@id/title"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/title"
-                    android:layout_marginEnd="8dp"/>
+                    android:layout_marginEnd="8dp"
+                    android:text="@{@string/room_capacity(viewModel.capacity)}"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
@@ -70,7 +72,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                imageUrl="@{url}"
+                imageUrl="@{viewModel.thumbnailUrl}"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </androidx.cardview.widget.CardView>

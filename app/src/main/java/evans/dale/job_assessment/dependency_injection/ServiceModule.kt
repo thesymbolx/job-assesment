@@ -5,8 +5,8 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.scopes.ViewModelScoped
-import evans.dale.job_assessment.room.RoomModel
-import evans.dale.job_assessment.room.RoomModelImpl
+import evans.dale.job_assessment.room.RoomRepository
+import evans.dale.job_assessment.room.RoomRepositoryImpl
 import evans.dale.job_assessment.service.RoomRepo
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -31,8 +31,8 @@ class ServiceModule {
 
     @Provides
     @ViewModelScoped
-    fun getRoomRepo(roomService: RoomRepo): RoomModel =
-        RoomModelImpl(
+    fun getRoomRepo(roomService: RoomRepo): RoomRepository =
+        RoomRepositoryImpl(
             roomService
         )
 }
