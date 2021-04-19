@@ -32,7 +32,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:background="@drawable/rounded"
             android:text="@{viewModel.title}"
-            style="@style/DetailsHeaderText"
+            style="@style/DetailsText"
             android:layout_marginTop="16dp"/>
 
         <View
