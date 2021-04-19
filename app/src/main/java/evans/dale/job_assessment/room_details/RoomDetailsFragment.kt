@@ -29,6 +29,9 @@ class RoomDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentRoomDetailsBinding.inflate(inflater).apply {
+            lifecycleOwner = viewLifecycleOwner
+            viewModel = this@RoomDetailsFragment.viewModel
+
             adapter = DetailsAdapter()
             detailsRecycler.adapter = this@RoomDetailsFragment.adapter
             detailsRecycler.layoutManager = LinearLayoutManager(context)

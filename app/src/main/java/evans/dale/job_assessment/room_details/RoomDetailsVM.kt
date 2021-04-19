@@ -2,6 +2,7 @@ package evans.dale.job_assessment.room_details
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MutableLiveData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import evans.dale.job_assessment.R
 import evans.dale.job_assessment.room.RoomRepository
@@ -15,10 +16,12 @@ class RoomDetailsVM @Inject constructor(
 ) : AndroidViewModel(application) {
     val room: RoomDetail? = null
     val imageUrl = MutableLiveData<String>()
+    val roomName = MutableLiveData<String>()
 
     suspend fun getRoomDetails(roomKey: String): List<DetailModel> {
         val room = roomRepository.getRoomDetails(roomKey)
         imageUrl.postValue(room.heroImageUrl)
+        roomName.postValue(room.name)
 
         return mutableListOf<DetailModel>().apply {
             addHeader(R.string.details_location)
@@ -46,6 +49,13 @@ class RoomDetailsVM @Inject constructor(
             if (room.facilities.isNotEmpty()) {
                 addHeader(R.string.details_facilities)
                 room.facilities.forEach {
+                    addIconTextItem(it.name, it.iconUrl)
+                }
+            }
+
+            if(room.equipment.isNotEmpty()) {
+                addHeader(R.string.details_equipment)
+                room.equipment.forEach {
                     addIconTextItem(it.name, it.iconUrl)
                 }
             }
