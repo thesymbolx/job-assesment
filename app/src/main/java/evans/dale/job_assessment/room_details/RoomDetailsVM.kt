@@ -2,7 +2,6 @@ package evans.dale.job_assessment.room_details
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.MutableLiveData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import evans.dale.job_assessment.R
 import evans.dale.job_assessment.room.RoomRepository
