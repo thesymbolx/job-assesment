@@ -17,17 +17,11 @@ fun setImageId(view: ImageView, id: Int) {
 
 @BindingAdapter("imageUrl")
 fun imageUrl(view: ImageView, url: String) {
-    val circularProgressDrawable = CircularProgressDrawable(view.context)
-    circularProgressDrawable.strokeWidth = 5f
-    circularProgressDrawable.centerRadius = 30f
-    circularProgressDrawable.start()
-
     Glide
             .with(view)
             .asBitmap()
             .load(url)
             .fitCenter()
             .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .placeholder(circularProgressDrawable)
             .into(view)
 }

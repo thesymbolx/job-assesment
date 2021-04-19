@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">job-assessment</string>
+
+    <string name="header_rooms_list">Room List</string>
+
     <string name="room_capacity">Capacity: %s</string>
 
     <!-- Room Details -->

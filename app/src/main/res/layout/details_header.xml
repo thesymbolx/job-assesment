@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp">
 
     <data>
         <variable
@@ -8,10 +11,9 @@
             type="evans.dale.job_assessment.room_details.RoomDetailsVM.DetailModel.Header" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        android:layout_height="wrap_content">
 
         <View
             android:layout_width="0dp"
@@ -20,7 +22,7 @@
             app:layout_constraintEnd_toStartOf="@id/title"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="@id/title"
-            android:background="@color/yellow_500"/>
+            android:background="@color/white" />
 
         <TextView
             android:id="@+id/title"
@@ -32,8 +34,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:background="@drawable/rounded"
             android:text="@{viewModel.title}"
-            style="@style/DetailsHeaderText"
-            android:layout_marginTop="16dp"/>
+            style="@style/DetailsText"
+            android:layout_marginTop="16dp" />
 
         <View
             android:layout_width="0dp"
@@ -42,7 +44,7 @@
             app:layout_constraintStart_toEndOf="@id/title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="@id/title"
-            android:background="@color/yellow_500"/>
+            android:background="@color/white"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
