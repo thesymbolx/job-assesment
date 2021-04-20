@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="evans.dale.job_assessment.room.RoomItemVM" />
+            type="evans.dale.job_assessment.room.RoomItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -4,11 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import evans.dale.job_assessment.databinding.RoomItemBinding
-import evans.dale.job_assessment.service.Room
 
 class RoomAdapter (
-        var items: List<RoomItemVM> = emptyList(),
-        val roomClick: (key: String) -> Unit) : RecyclerView.Adapter<RoomAdapter.ViewHolder>() {
+    var items: List<RoomItem> = emptyList(),
+    val roomClick: (key: String) -> Unit) : RecyclerView.Adapter<RoomAdapter.ViewHolder>() {
 
     class ViewHolder(val binding: RoomItemBinding) : RecyclerView.ViewHolder(binding.root)
 

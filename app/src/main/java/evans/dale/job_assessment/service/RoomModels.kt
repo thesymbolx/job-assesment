@@ -7,7 +7,7 @@ data class Room (
     val capacity: Int)
 
 data class RoomDetail(
-    val key: Int,
+    val key: String,
     val name: String,
     val heroImageUrl: String,
     val capacity: Int,

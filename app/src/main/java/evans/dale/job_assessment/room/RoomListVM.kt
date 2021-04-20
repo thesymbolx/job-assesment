@@ -9,11 +9,11 @@ class RoomListVM @Inject constructor(
     private val roomRepository: RoomRepository,
 ) : ViewModel() {
 
-   suspend fun getRoomList(): List<RoomItemVM> {
+   suspend fun getRoomList(): List<RoomItem> {
         val rooms = roomRepository.getRoomList()
 
         return rooms.map {
-            RoomItemVM(
+            RoomItem(
                     it.thumbnailUrl,
                     it.name,
                     it.capacity,
